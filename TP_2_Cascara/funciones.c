@@ -84,17 +84,14 @@ void altaPersona(ePersona persona[], int tam)
 
 void borrarPersona(ePersona persona[],int tam)
 {
-    int dni;
+    int dni,i;
     int lugarBuscar;
-    int eliminar;
     char respuesta;
 
     printf("Ingrese el DNI de la persona que desea eliminar: ");
     scanf("%d",&dni);
 
-    lugarBuscar=buscarPorDni(persona,dni);
-
-    if(lugarBuscar!=1)
+    if(persona[i].estado==1&&buscarPorDni(persona,dni,tam)==persona[i].dni)
     {
         printf("Seguro que desea eliminar a: \nNombre:%s\nDNI:%d",persona[lugarBuscar].nombre,persona[lugarBuscar].dni);
         printf("Ingrese: s/n");
@@ -109,7 +106,7 @@ void borrarPersona(ePersona persona[],int tam)
         {
             printf("Se ha cancelado la operacion.");
         }
-        if(lugarBuscar==-1)
+        if(buscarPorDni(persona,dni,tam)==-1)
         {
             printf("No se ha encontrado el DNI.\n");
         }

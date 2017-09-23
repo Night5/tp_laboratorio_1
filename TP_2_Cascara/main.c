@@ -9,6 +9,7 @@ int main()
 {
     char seguir='s';
     int opcion=0;
+    int i;
     int contadorDe18=0,contadorDe19a35=0,contadorMayorDe35=0;
     ePersona persona[tam];
 
